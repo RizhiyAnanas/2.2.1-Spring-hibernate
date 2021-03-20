@@ -5,13 +5,13 @@ import javax.persistence.*;
 @Entity
 public class Car {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String model;
     private int series;
-
     @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private User user;
 
     public Car() {
@@ -20,6 +20,9 @@ public class Car {
     public Car(String model, int series) {
         this.model = model;
         this.series = series;
+    }
+
+    public Car(String subaru) {
     }
 
     public long getId() {

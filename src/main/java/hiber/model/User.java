@@ -3,10 +3,10 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "CRUDUsers")
 public class User {
    @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name="car_id")
+   @JoinColumn(name = "car_id")
    private Car car;
 
    @Id
